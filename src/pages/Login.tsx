@@ -90,12 +90,12 @@ const Login = () => {
   // Phone login removed
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pilgrim-peach to-white p-4">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-        <div className="flex flex-col items-center mb-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pilgrim-peach to-white p-3 sm:p-4">
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8">
+        <div className="flex flex-col items-center mb-6 sm:mb-8">
           <Logo size="large" />
-          <h2 className="text-2xl font-semibold mt-4 text-pilgrim-brown">Welcome Back</h2>
-          <p className="text-gray-500 mt-1">Sign in to your account</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mt-3 sm:mt-4 text-pilgrim-brown">Welcome Back</h2>
+          <p className="text-sm sm:text-base text-gray-500 mt-1">Sign in to your account</p>
         </div>
 
         {showEmailVerificationInfo && (
@@ -111,7 +111,7 @@ const Login = () => {
 
         {
           <Form {...emailForm}>
-            <form onSubmit={emailForm.handleSubmit(onEmailSubmit)} className="space-y-6">
+            <form onSubmit={emailForm.handleSubmit(onEmailSubmit)} className="space-y-4 sm:space-y-6">
               <FormField
                 control={emailForm.control}
                 name="email"

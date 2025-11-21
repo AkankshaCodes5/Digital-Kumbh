@@ -108,10 +108,10 @@ const UserDashboard: React.FC = () => {
       <div className="min-h-screen bg-gray-50">
         {/* Welcome Section */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">{welcomeMessage}</h1>
-              <p className="text-lg text-gray-600">{subtitleMessage}</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">{welcomeMessage}</h1>
+              <p className="text-base sm:text-lg text-gray-600">{subtitleMessage}</p>
             </div>
           </div>
         </div>
@@ -124,12 +124,12 @@ const UserDashboard: React.FC = () => {
         </div>
 
         {/* Main Cards Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               {getLocalizedText('Quick Actions', 'त्वरित कार्य', 'त्वरित क्रिया')}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
               {getLocalizedText(
                 'Choose from the options below to get started',
                 'शुरू करने के लिए नीचे दिए गए विकल्पों में से चुनें',
@@ -139,7 +139,7 @@ const UserDashboard: React.FC = () => {
           </div>
 
           {/* 4 Main Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {mainCards.map((card, index) => (
               <Card 
                 key={index} 
@@ -170,19 +170,19 @@ const UserDashboard: React.FC = () => {
           </div>
 
           {/* Additional Info Section */}
-          <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+          <div className="mt-12 sm:mt-16 bg-white rounded-2xl shadow-lg p-5 sm:p-6 md:p-8">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 {getLocalizedText('Need Help?', 'मदद चाहिए?', 'मदत हवी?')}
               </h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
                 {getLocalizedText(
                   'If you need assistance or have any questions, our support team is here to help you.',
                   'यदि आपको सहायता की आवश्यकता है या कोई प्रश्न है, तो हमारी सहायता टीम आपकी मदद के लिए यहाँ है।',
                   'जर तुम्हाला मदतीची गरज आहे किंवा काही प्रश्न आहेत, तर आमची सहायता टीम तुमच्या मदतीसाठी येथे आहे।'
                 )}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button 
                   variant="outline" 
                   className="border-pilgrim-orange text-pilgrim-orange hover:bg-pilgrim-orange hover:text-white"

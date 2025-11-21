@@ -35,3 +35,6 @@ ALTER PUBLICATION supabase_realtime ADD TABLE public.screen_status;
 
 
 
+
+
+

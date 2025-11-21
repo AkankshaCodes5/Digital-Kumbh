@@ -101,35 +101,40 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex justify-between h-14 sm:h-16 items-center">
+            <div className="flex items-center min-w-0 flex-1">
               <button
-                className="md:hidden -ml-2 mr-2 p-2 rounded-md hover:bg-gray-100"
+                className="md:hidden -ml-2 mr-2 p-2 rounded-md hover:bg-gray-100 touch-manipulation"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
+                aria-label="Toggle menu"
               >
                 {sidebarOpen ? (
-                  <X className="h-6 w-6 text-pilgrim-brown" />
+                  <X className="h-5 w-5 sm:h-6 sm:w-6 text-pilgrim-brown" />
                 ) : (
-                  <Menu className="h-6 w-6 text-pilgrim-brown" />
+                  <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-pilgrim-brown" />
                 )}
               </button>
-              <Logo size="small" />
+              <div className="min-w-0 flex-shrink-0">
+                <Logo size="small" />
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <LanguageSwitcher currentLanguage={language} setLanguage={setLanguage} />
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+              <div className="hidden sm:block">
+                <LanguageSwitcher currentLanguage={language} setLanguage={setLanguage} />
+              </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                    <UserCircle2 className="h-6 w-6 text-pilgrim-brown" />
+                  <Button variant="ghost" className="relative h-9 w-9 sm:h-10 sm:w-10 rounded-full p-0">
+                    <UserCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-pilgrim-brown" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>
-                    <div className="font-normal text-sm">
+                    <div className="font-normal text-xs sm:text-sm">
                       {language === 'english' ? 'Signed in as' : language === 'hindi' ? 'इस रूप में साइन इन' : 'म्हणून साइन इन'}
                     </div>
-                    <div className="font-semibold">{user.name}</div>
+                    <div className="font-semibold text-sm sm:text-base truncate">{user.name}</div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
@@ -146,6 +151,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              <div className="sm:hidden">
+                <LanguageSwitcher currentLanguage={language} setLanguage={setLanguage} />
+              </div>
             </div>
           </div>
         </div>
@@ -251,7 +259,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         {/* Main content */}
         <div className="flex flex-col w-0 flex-1 overflow-auto bg-gray-50">
           <main className="flex-1 relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
               {children}
             </div>
           </main>

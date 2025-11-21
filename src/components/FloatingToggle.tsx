@@ -29,26 +29,26 @@ const FloatingToggle: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 touch-manipulation">
       <ToggleGroup 
         type="single" 
         value={value}
         onValueChange={handleValueChange}
-        className="bg-[#FF8C42] rounded-full shadow-lg p-1 flex gap-1"
+        className="bg-[#FF8C42] rounded-full shadow-lg p-0.5 sm:p-1 flex gap-0.5 sm:gap-1"
       >
         <ToggleGroupItem
           value="chat"
           aria-label={getLocalizedText("Chat", "चैट", "चॅट")}
-          className="rounded-full p-3 data-[state=on]:bg-white data-[state=on]:text-[#FF8C42] text-white transition-all hover:bg-white/10"
+          className="rounded-full p-2 sm:p-3 data-[state=on]:bg-white data-[state=on]:text-[#FF8C42] text-white transition-all hover:bg-white/10 touch-manipulation"
         >
-          <MessageSquare className="w-5 h-5" strokeWidth={2.5} />
+          <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </ToggleGroupItem>
         <ToggleGroupItem
           value="emergency"
           aria-label={getLocalizedText("Emergency", "आपातकाल", "आपत्काल")}
-          className="rounded-full p-3 data-[state=on]:bg-white data-[state=on]:text-[#FF8C42] text-white transition-all hover:bg-white/10"
+          className="rounded-full p-2 sm:p-3 data-[state=on]:bg-white data-[state=on]:text-[#FF8C42] text-white transition-all hover:bg-white/10 touch-manipulation"
         >
-          <Phone className="w-5 h-5" strokeWidth={2.5} />
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>

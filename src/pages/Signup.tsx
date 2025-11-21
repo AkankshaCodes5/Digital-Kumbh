@@ -94,16 +94,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pilgrim-peach to-white p-4">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-        <div className="flex flex-col items-center mb-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pilgrim-peach to-white p-3 sm:p-4">
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8">
+        <div className="flex flex-col items-center mb-6 sm:mb-8">
           <Logo size="large" />
-          <h2 className="text-2xl font-semibold mt-4 text-pilgrim-brown">Create Account</h2>
-          <p className="text-gray-500 mt-1">Join Pilgrim Safe Haven</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mt-3 sm:mt-4 text-pilgrim-brown">Create Account</h2>
+          <p className="text-sm sm:text-base text-gray-500 mt-1">Join Pilgrim Safe Haven</p>
         </div>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
             <FormField
               control={form.control}
               name="name"
@@ -162,19 +162,19 @@ const Signup = () => {
               )}
             />
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <FormField
                 control={form.control}
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel className="text-sm sm:text-base">Password</FormLabel>
                     <FormControl>
                       <Input 
                         type="password" 
                         placeholder="Create password" 
                         {...field} 
-                        className="pilgrim-input"
+                        className="pilgrim-input text-sm sm:text-base"
                         disabled={isSubmitting}
                       />
                     </FormControl>
@@ -188,13 +188,13 @@ const Signup = () => {
                 name="confirmPassword"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Confirm Password</FormLabel>
+                    <FormLabel className="text-sm sm:text-base">Confirm Password</FormLabel>
                     <FormControl>
                       <Input 
                         type="password" 
                         placeholder="Confirm password" 
                         {...field} 
-                        className="pilgrim-input"
+                        className="pilgrim-input text-sm sm:text-base"
                         disabled={isSubmitting}
                       />
                     </FormControl>
@@ -204,7 +204,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <FormField
                 control={form.control}
                 name="role"
